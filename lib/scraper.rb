@@ -18,7 +18,9 @@ class Scraper
       student[:name] = student_card.css("h4").text
       student[:location] = student_card.css(".student-location").text
       student[:profile_url] = student_card.css("a").attribute("href").value
+      puts student
       student_array << student
+      binding.pry
     }
     #i+=1
 
