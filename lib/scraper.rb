@@ -7,7 +7,7 @@ class Scraper
     html = File.read(index_url)
     students_site = Nokogiri::HTML(html)
     student_array = []
-    i=0
+    #i=0
     #binding.pry
     students_site.css(".student-card").each do |student_card|
       student = {}
@@ -20,7 +20,7 @@ class Scraper
       student[:profile_url] = student_card.css("a").attribute("href").value
       puts student
       student_array << student
-      binding.pry
+      #binding.pry
     #}
     #i+=1
 
