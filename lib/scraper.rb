@@ -21,7 +21,7 @@ class Scraper
       puts student
       student_array << student
       binding.pry
-    }
+    #}
     #i+=1
 
     end
