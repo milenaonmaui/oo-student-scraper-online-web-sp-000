@@ -10,12 +10,17 @@ class Scraper
     i=0
     #binding.pry
     students_site.css(".student-card").each do |student_card|
-      student_array[i] = {
-      :name => student_card.css("h4").text,
-      :location => student_card.css(".student-location").text,
-      :profile_url => student_card.css("a").attribute("href").value
+      student = {}
+      #student_array[i] = {
+      #:name => student_card.css("h4").text,
+      #:location => student_card.css(".student-location").text,
+      #:profile_url => student_card.css("a").attribute("href").value
+      student[:name] = student_card.css("h4").text
+      student[:location] = student_card.css(".student-location").text
+      student[:profile_url] = student_card.css("a").attribute("href").value
+      student_array << student
     }
-    i+=1
+    #i+=1
 
     end
     student_array
